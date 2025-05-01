@@ -1,9 +1,7 @@
-// src/App.js
-
 import React, { useState } from 'react';
 import './App.css';
 
-// 10 Indian Political Parties with their image symbols (using image URLs)
+
 const parties = [
   { name: "BJP", symbolUrl: "https://m.media-amazon.com/images/I/61IRSd00KML.jpg", id: 1 },
   { name: "Congress", symbolUrl: "https://www.peacockride.com/cdn/shop/files/inc2_60a391c1-80da-43d0-92b2-5f438c63e657_1024x1024.jpg?v=1683788416", id: 2 },
@@ -18,23 +16,21 @@ const parties = [
 ];
 
 function App() {
-  const [votes, setVotes] = useState(Array(10).fill(0)); // To store vote counts
-  const [votedParty, setVotedParty] = useState(null); // To track if a party has been voted for
-  const [isVoteCompleted, setIsVoteCompleted] = useState(false); // To track if voting is done
+  const [votes, setVotes] = useState(Array(10).fill(0)); 
+  const [votedParty, setVotedParty] = useState(null);
+  const [isVoteCompleted, setIsVoteCompleted] = useState(false);
 
   const handleVote = (partyId) => {
     if (votedParty === null) {
-      // Only allow voting if no party has been selected yet
       const updatedVotes = [...votes];
       updatedVotes[partyId - 1] += 1;
       setVotes(updatedVotes);
-      setVotedParty(partyId); // Mark the party as selected
-      setIsVoteCompleted(true); // Mark the voting process as completed
+      setVotedParty(partyId); 
+      setIsVoteCompleted(true); 
     }
   };
 
   const handleReset = () => {
-    // Reset votes and selected party when the user wants to change their vote
     setVotes(Array(10).fill(0));
     setVotedParty(null);
     setIsVoteCompleted(false);
@@ -55,7 +51,7 @@ function App() {
               <button
                 onClick={() => handleVote(party.id)}
                 className="vote-button"
-                disabled={votedParty !== null} // Disable all buttons after a vote is cast
+                disabled={votedParty !== null} 
               >
                 Vote
               </button>
