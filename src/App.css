@@ -1,4 +1,3 @@
-/* src/App.css */
 .App {
   text-align: center;
   font-family: 'Comic Sans MS', sans-serif;
@@ -16,7 +15,7 @@ h1.heading {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px; /* Added spacing between party cards */
+  gap: 30px;
 }
 
 .party {
